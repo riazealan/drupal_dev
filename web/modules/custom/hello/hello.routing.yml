@@ -5,3 +5,20 @@ hello.hello:
     _controller: '\Drupal\hello\Controller\HelloController::content'
   requirements:
     _access: 'TRUE'  
+
+hello.hello2:
+  path: 'hello/liste-noeuds/{nodetype}'
+  defaults:
+    _title: 'nodelist'
+    _controller: '\Drupal\hello\Controller\HelloController::nodelist'
+    nodetype: ''
+  requirements:
+    _access: 'TRUE'
+    
+hello.connection_list:
+  path: 'user/{user}/statistics'
+  defaults:
+    _title: 'connection'
+    _controller: '\Drupal\hello\Controller\HelloController::connection'
+  requirements:
+    _access: 'TRUE'    
