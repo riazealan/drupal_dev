@@ -19,6 +19,7 @@ class Hello extends BlockBase {
     $date_formatter = \Drupal::service('date.formatter');
     $time = \Drupal::service('datetime.time')->getCurrentTime();
     $user_name = \Drupal::currentUser()->getDisplayName();
+    
     return [
         '#markup' => $this->t('welcome %name. It os %time', 
          [

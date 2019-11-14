@@ -2,6 +2,7 @@
 
 use \Drupal\user\UserInterface;
 use Drupal\Console\Bootstrap\Drupal;
+use Drupal\Core\Form\FormStateInterface;
 
 function hello_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
     switch ($route_name) {
@@ -23,6 +24,11 @@ function hello_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route
     // Short-running operation example, not using a queue:
     // Delete all expired records since the last cron run.
     \Drupal::messenger()->addMessage('hello cron form riaze');
+    $purge_days_number = \Drupal::config('hello.setting')->get('purge_days_number');
+    if($purge_days_number != '0'){
+      \Drupal::database()->delete('hello_user_statistics')->condition('time', REQUEST_TIME-$purge_days_number * (24*3600), '<')
+      ->execute();
+    }
     
   }
 
@@ -54,3 +60,43 @@ function hello_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route
     \Drupal::database()->delete('hello_user_statistics')->condition('uid',  $user->id())->execute();
 
   }
+
+  function hello_theme($existing, $type, $theme, $path){
+    return array(
+      'hello_module' => array(
+        'template' => 'hello-module',
+        'variables' => array('data' => null),
+      ),
+    );
+  }
+
+  function hello_form_user_admin_settings_alter(array &$form, FormStateInterface $form_state){
+    
+    $roles = \Drupal::entityTypeManager()->getStorage('user_role')->loadMultiple();
+    unset($roles['anonymous']);
+    $options = [];
+    foreach($roles as $role){
+      $options[$role->id()] = $role->label();
+    }
+    $form['user_statistics'] = [
+      '#type' => 'details',
+      '#title' => t('Choose roles to track'),
+      '#options' => TRUE,
+      '#weight' => -1,
+    ];
+
+    $form['user_statistics']['options'] = [
+      '#type' => 'checkboxes',
+      '#options' => $options,
+      '#default_value' => \Drupal::config('hello.settings')->get('user_statistics_roles'),
+    ];
+
+    $form['#submit'][] = 'hello_user_admin_settings_form_submit';
+  }
+
+  function  hello_user_admin_settings_form_submit(array &$form, FormStateInterface $form_state){
+    
+    $options = $form_state->getValue('options');
+    \Drupal::configFactory()->getEditable('hello.settings')->set('user_statistics_roles', $options)->save();
+  }
+  

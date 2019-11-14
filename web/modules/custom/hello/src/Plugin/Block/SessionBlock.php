@@ -2,6 +2,9 @@
 
 namespace Drupal\hello\Plugin\Block;
 use Drupal\Core\Block\BlockBase; 
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Access\AccessResult;
+
 
 /**
  * Provides a session block. 
@@ -25,5 +28,8 @@ class SessionBlock extends BlockBase {
             'max-age' => '0' 
         ],
     ];
+  }
+  protected function blockAccess(AccountInterface $account){
+      return AccessResult::allowedIfHasPermission($account, 'access Hello');
   }
 }

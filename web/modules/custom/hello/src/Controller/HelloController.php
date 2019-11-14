@@ -70,12 +70,17 @@ public function connection(\Drupal\user\UserInterface $user)
     $query->fields('h', ['action', 'time'])->condition('uid', $user->id());
     $results = $query->execute();
     $user_statistics = [];
+    $connexions = 0;
     foreach($results as $record){
         $user_statistics[]= [
             $record->action =='1' ? $this->t('Login'): $this->t('Logout'),
             \Drupal::service('date.formatter')->format($record->time),];
+         $connexions += $record->action;   
     
     }
+
+    $user = $this->currentUser()->getDisplayName();
+    
     $table = [
         '#type' => 'table',
         '#header' => ['Action', 'Time'],
@@ -83,5 +88,15 @@ public function connection(\Drupal\user\UserInterface $user)
         '#empty'=> $this->t('No connection yet'),
 
     ];
-    return [$table];
-}}
+    $output = array(
+        '#theme' => 'hello_module',
+        '#data' => 'the user'.' ' .$user. ' '. 'has been connected'.' ' .$connexions.' '. 'time(s)',
+    );
+    
+    return [$output, $table];
+}
+
+
+
+
+}

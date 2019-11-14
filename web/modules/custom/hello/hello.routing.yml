@@ -4,7 +4,7 @@ hello.hello:
     _title: 'hello'
     _controller: '\Drupal\hello\Controller\HelloController::content'
   requirements:
-    _access: 'TRUE'  
+    _permission: 'access Hello, administer Hello'
 
 hello.hello2:
   path: 'hello/liste-noeuds/{nodetype}'
@@ -21,4 +21,20 @@ hello.connection_list:
     _title: 'connection'
     _controller: '\Drupal\hello\Controller\HelloController::connection'
   requirements:
-    _access: 'TRUE'    
+    _access_hello: '48' 
+
+hello.form:
+  path: 'hello/calculator'
+  defaults:
+    _title: 'calculator'
+    _form: '\Drupal\hello\Form\HelloForm'
+  requirements:
+    _permission: 'access Hello' 
+
+hello.admin_form:
+  path: '/admin/config/hello'
+  defaults:
+    _title: 'User statistics'
+    _form: '\Drupal\hello\Form\AdminForm'
+  requirements:
+    _permission: 'administer Hello'
