@@ -14,4 +14,12 @@ hello.connection_list:
   title : Connection
   route_name: hello.connection_list
   base_route: entity.user.canonical
-  weight: 5
+  weight: 5 
+
+hello.calculator:
+  title : Calculator
+  route_name: hello.form
+  base_route: hello.hello
+  weight: 6
+
+

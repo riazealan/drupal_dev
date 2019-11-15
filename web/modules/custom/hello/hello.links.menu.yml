@@ -4,4 +4,10 @@ hello.page:
   description: 'hello page'
   menu_name: main
   
- 
+ hello.admin_form:
+  title : 'Hello'
+  discription : 'Hello module configuation page'
+  route_name: hello.admin_form
+  menu_name : admin
+  parent : system.admin_config
+
