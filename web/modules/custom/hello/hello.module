@@ -37,22 +37,32 @@ function hello_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route
   function hello_user_login($account) {
     
    \Drupal::messenger()->addMessage(t('hello cron form %name!', ['%name' => $account->getAccountName()]));
-   \Drupal::database()->insert('hello_user_statistics')->fields(
+    $roles = \Drupal::config('hello.settings')->get('user_statistics_roles');
+    $user_roles = $account->getRoles();
+    $diff = array_intersect($roles, $user_roles);
+    if(count($diff) > 0){
+    \Drupal::database()->insert('hello_user_statistics')->fields(
      [
        'uid' =>$account->id(),
        'action' => 1,
        'time' => REQUEST_TIME,
      ])->execute();
+     
+    }
   }
 
   function hello_user_logout(\Drupal\Core\Session\AccountProxyInterface $account) {
-    
+    $roles = \Drupal::config('hello.settings')->get('user_statistics_roles');
+    $user_roles = $account->getRoles();
+    $diff = array_intersect($roles, $user_roles);
+    if(count($diff) > 0){
     \Drupal::database()->insert('hello_user_statistics')->fields(
       [
         'uid' =>$account->id(),
         'action' => 0,
         'time' => REQUEST_TIME,
       ])->execute();
+    }
    }
 
   function hello_user_delete(\Drupal\user\UserInterface $user) {
@@ -90,7 +100,8 @@ function hello_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route
       '#options' => $options,
       '#default_value' => \Drupal::config('hello.settings')->get('user_statistics_roles'),
     ];
-
+  
+    
     $form['#submit'][] = 'hello_user_admin_settings_form_submit';
   }
 
