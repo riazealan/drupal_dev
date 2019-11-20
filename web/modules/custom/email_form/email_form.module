@@ -1,0 +1,33 @@
+<?php
+
+use Drupal\node\NodeInterface;
+
+function email_form_mail($key, &$message, $params){
+    switch ($key) {
+     case 'node_mail':
+        $message['from'] = 'ria.thas20@gmail.com';
+        $message['subject'] = t('Node updated');
+        $message['body'][] = t('test');
+        break;
+    }
+}
+
+function email_form_node_update(NodeInterface $node)
+{
+   // get the email which is equal to node id (artical)
+   $emails = \Drupal::database()->select('email_form_node_subscriber', 'efns')
+           ->fields('efns', ['email'])
+           ->condition('nid', $node->id())
+           ->execute();
+   // call mais service
+   $mail_manager = \Drupal::service('plugin.manager.mail');
+   //loop through the result
+   foreach($emails as $email)
+   {
+       //ksm($email);
+       //$mailManager->mail($module, $key, $to, $langcode, $params, $reply, $send);
+       $mail_manager->mail('email_form', 'node_mail', $email->email, 'en', [], NULL, TRUE);
+   }
+   // set send message
+   drupal_set_message('Email has been send to '.$email->email );
+}
