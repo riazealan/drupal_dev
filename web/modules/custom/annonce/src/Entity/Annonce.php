@@ -11,7 +11,7 @@ use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\user\UserInterface;
 
-/**
+/** 
  * Defines the Annonce entity.
  *
  * @ingroup annonce
