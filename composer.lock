@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2c75a49039b76eb761fb0d9dc2196e1d",
+    "content-hash": "226cbeb2e62115b1fde4945fb32aecd0",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2910,6 +2910,65 @@
             "homepage": "https://www.drupal.org/project/toolbar_themes",
             "support": {
                 "source": "https://git.drupalcode.org/project/toolbar_themes"
+            }
+        },
+        {
+            "name": "drupal/zircon",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/zircon.git",
+                "reference": "8.x-0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/zircon-8.x-0.2.zip",
+                "reference": "8.x-0.2",
+                "shasum": "e0c7cb174cc6312a54fe4bc7f4f95677c77946df"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "branch-alias": {
+                    "dev-0.x": "0.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-0.2",
+                    "datestamp": "1452746339",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Hai Nguyen",
+                    "homepage": "https://www.drupal.org/user/1229130"
+                },
+                {
+                    "name": "MegaChriz",
+                    "homepage": "https://www.drupal.org/user/654114"
+                },
+                {
+                    "name": "WeebPal",
+                    "homepage": "https://www.drupal.org/user/1861072"
+                },
+                {
+                    "name": "buivankim2020",
+                    "homepage": "https://www.drupal.org/user/2959439"
+                }
+            ],
+            "description": "A flexible, recolorable theme with many regions and a responsive, mobile-first layout.",
+            "homepage": "https://www.drupal.org/project/zircon",
+            "support": {
+                "source": "https://git.drupalcode.org/project/zircon"
             }
         },
         {
