@@ -1,0 +1,22 @@
+uuid: 3317dbe3-ee5c-4782-b034-a93394554b6e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - zircon
+_core:
+  default_config_hash: za-39d5WDUg6XvbyqSnuVYEeq6QM4qKJxW8MnoAha5A
+id: zircon_search
+theme: zircon
+region: sidebar_first
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+visibility: {  }
