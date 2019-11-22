@@ -1,0 +1,14 @@
+uuid: 9587914e-13ce-40a1-852e-d1375bb340bb
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: K8qTfK5-87DpwTQBkqhgTMR4P0Zz8Z9aNI7OnMlTb0Q
+id: gender
+label: Sexe
+category: Demographic
+likert: false
+options: "Male: Male\nFemale: Female\n"
