@@ -6,7 +6,8 @@ id: prod
 label: prod
 description: ''
 folder: ../config/prod
-module: {  }
+module:
+  big_pipe: 0
 theme: {  }
 blacklist: {  }
 graylist:
