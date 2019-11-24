@@ -1,0 +1,14 @@
+uuid: c3edefa1-e120-4bb1-a5da-c84a46791db5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.organisteur
+  module:
+    - user
+id: user_remove_role_action.organisteur
+label: 'Enlever le rôle organisteur des utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: organisteur

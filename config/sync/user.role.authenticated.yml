@@ -1,4 +1,4 @@
-uuid: fce3c63b-57bd-440b-a8b5-f02281655c72
+uuid: 846d712d-e519-4780-bf21-027aea8077da
 langcode: fr
 status: true
 dependencies: {  }
@@ -13,11 +13,7 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
-  - 'add annonce entities'
-  - 'edit own annonce entities'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
-  - 'view all annonce revisions'
-  - 'view published annonce entities'

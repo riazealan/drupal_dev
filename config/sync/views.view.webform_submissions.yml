@@ -1,4 +1,4 @@
-uuid: 1697bbfd-dba1-404e-b461-763c9ef1c5f2
+uuid: c8629f8c-1ec0-4235-9d6a-7f6bffc6ff90
 langcode: fr
 status: true
 dependencies:
@@ -1110,7 +1110,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Completed
+          label: Terminé
           exclude: false
           alter:
             alter_text: false
@@ -1915,7 +1915,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Completed
+          label: Terminé
           exclude: false
           alter:
             alter_text: false
@@ -2743,7 +2743,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Completed
+          label: Terminé
           exclude: false
           alter:
             alter_text: false

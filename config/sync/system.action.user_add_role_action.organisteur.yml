@@ -1,0 +1,14 @@
+uuid: f6e9116d-5095-49c5-b264-8beba771625d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.organisteur
+  module:
+    - user
+id: user_add_role_action.organisteur
+label: 'Ajouter le rôle organisteur aux utilisateurs sélectionnés'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: organisteur

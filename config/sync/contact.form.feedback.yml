@@ -1,4 +1,4 @@
-uuid: 32c40fd9-74cd-47d3-a698-2000e532bbdb
+uuid: 11f4a802-5b25-4c25-a858-af5e5e5adbae
 langcode: fr
 status: true
 dependencies: {  }
@@ -7,7 +7,7 @@ _core:
 id: feedback
 label: 'Retours utilisateurs sur le site web'
 recipients:
-  - rjarraud@gmail.com
+  - drupal@drupal.org
 reply: ''
 weight: 0
 message: 'Your message has been sent.'

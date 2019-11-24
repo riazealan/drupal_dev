@@ -1,8 +1,0 @@
-access hello:
-  title: 'Hello Permision'
-  description: 'Description de ma permission'
-
-administer hello:
-  title: 'Admin Permision'
-  description: 'Allow user to access and  administer'
-  

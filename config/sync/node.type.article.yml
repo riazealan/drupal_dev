@@ -1,18 +1,7 @@
-uuid: b4f6a6ac-e6ba-4011-8bf1-5020c518f90b
+uuid: 75116be0-a47d-403a-88fc-b2b57d187795
 langcode: fr
 status: true
-dependencies:
-  module:
-    - menu_ui
-    - reusable_forms
-third_party_settings:
-  menu_ui:
-    available_menus:
-      - main
-    parent: 'main:'
-  reusable_forms:
-    enabled: 1
-    plugin: email_form
+dependencies: {  }
 _core:
   default_config_hash: AeW1SEDgb1OTQACAWGhzvMknMYAJlcZu0jljfeU3oso
 name: Article

@@ -1,18 +1,17 @@
-uuid: c4d67d7e-d956-49af-a3b2-60fe84a42023
+uuid: 3e153bd5-a14f-4162-8fb3-5365de1ad5c5
 langcode: fr
 status: false
 dependencies: {  }
 id: prod
-label: prod
+label: Prod
 description: ''
 folder: ../config/prod
-module:
-  big_pipe: 0
+module: {  }
 theme: {  }
-blacklist: {  }
+blacklist:
+  - system.theme
 graylist:
   - system.site
-  - 'webform.*'
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0

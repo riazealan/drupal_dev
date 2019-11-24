@@ -1,19 +1,23 @@
-uuid: 64aca905-7f3e-42fd-bba0-4726d3c782f8
+uuid: 3b15c58d-8df5-4fe0-a11a-0cf8a20f1e70
 langcode: fr
-status: false
+status: true
 dependencies: {  }
 id: dev
-label: DEV
+label: Dev
 description: ''
 folder: ../config/dev
 module:
+  admin_toolbar: 0
+  admin_toolbar_links_access_filter: 0
+  admin_toolbar_tools: 0
   devel: 0
   devel_generate: 0
   kint: 0
   views_ui: 0
   webprofiler: 0
 theme: {  }
-blacklist: {  }
+blacklist:
+  - 'webform.*'
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true

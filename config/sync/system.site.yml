@@ -1,7 +1,7 @@
-uuid: 7a0ae14b-93eb-4246-ae0d-56fc9ac38d36
-name: 'riaze dev'
-mail: ria.thas20@gmail.com
-slogan: 'welcome to my site'
+uuid: e0c62533-1d3e-45bf-9836-7593b5d61719
+name: drupal_dev
+mail: drupal@drupal.org
+slogan: ''
 page:
   403: ''
   404: ''
@@ -12,4 +12,3 @@ langcode: fr
 default_langcode: fr
 _core:
   default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
-mail_notification: ''

@@ -1,0 +1,9 @@
+uuid: f895fdd5-d198-48c9-b742-f799ae59f84f
+langcode: fr
+status: true
+dependencies: {  }
+id: organisteur
+label: organisteur
+weight: 3
+is_admin: null
+permissions: {  }
