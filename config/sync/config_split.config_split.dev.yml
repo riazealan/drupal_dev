@@ -16,9 +16,9 @@ module:
   views_ui: 0
   webprofiler: 0
 theme: {  }
-blacklist:
+blacklist: {  }
+graylist:
   - 'webform.*'
-graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0

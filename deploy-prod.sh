@@ -5,7 +5,7 @@ composer install --no-dev
 
 #vide le cache
 
-druch cr
+drush cr
 
 #metà jour database
 drush updb -y
